@@ -35,7 +35,7 @@ parameters{
 	}
 
     triggers {
-        gitlab(triggerOnPush: true, triggerOnMergeRequest: true, branchFilterType: 'All')
+        github(triggerOnPush: true, triggerOnMergeRequest: true, branchFilterType: 'All')
     }
 
     stages {
