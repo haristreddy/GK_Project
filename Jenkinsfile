@@ -2,7 +2,11 @@
 //@Library("Jenkins_Library@2.147") _
 pipeline {
    
-			customWorkspace "F://Jenkins//${env.JOB_NAME}".replace('%2F', '_')
+   node {
+	   label 'localhost'
+	   	customWorkspace "F://Jenkins//${env.JOB_NAME}".replace('%2F', '_')
+   }
+			
 		
 parameters{
 		
