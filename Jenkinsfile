@@ -35,7 +35,7 @@ parameters{
 	}
 
     triggers {
-        github(triggerOnPush: true, triggerOnMergeRequest: true, branchFilterType: 'All')
+        githubPush(triggerOnPush: true, triggerOnMergeRequest: true, branchFilterType: 'All')
     }
 
     stages {
