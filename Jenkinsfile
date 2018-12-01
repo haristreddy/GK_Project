@@ -34,9 +34,9 @@ parameters{
 		ComponentVersion = "${params.COMPONENTVERSION}.${env.BUILD_NUMBER}"	
 	}
 
-    triggers {
+  /*  triggers {
         githubPush
-    }
+    } */
 
     stages {
 		stage('Checkout') {
