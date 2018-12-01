@@ -1,0 +1,24 @@
+<Project ToolsVersion="4.7.1" DefaultTargets="BuildAndCopy" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Import Project="C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.tasks"/>
+   	<Import Project="C:\Program Files (x86)\MSBuild\ExtensionPack\4.0\MSBuild.ExtensionPack.tasks"/>
+	<Import Project="C:\Program Files (x86)\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+
+	
+	<Target Name="BuildAndCopy" DependsOnTargets="WriteHost">
+		<Message Text="+++++++++++++++++++++++++++++++++++++++++" /> 
+		<Message Text="Package created successfully" /> 
+		<Message Text="+++++++++++++++++++++++++++++++++++++++++" /> 
+	</Target>
+		<Target Name="WriteHost">  
+        <Message Text="+++++++++++++++++++++++++++++++++++++++++" /> 
+		<Message Text="Entered into WriteHost target" /> 
+		<Message Text="+++++++++++++++++++++++++++++++++++++++++" /> 
+	</Target>
+		
+	<Target Name="Publish">
+        <Message Text="Running Publish" />
+        <Exec WorkingDirectory="$(BuildDir)" Command="choco pack  ./pack/silverlight/silverlight.nuspec --version $(version) --outputdirectory ./dist" LogStandardErrorAsError="true"/>
+        <Message Text="Publish Complete" />
+    </Target>
+	
+</Project>	
