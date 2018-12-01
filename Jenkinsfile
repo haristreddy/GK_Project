@@ -1,10 +1,13 @@
 #!groovy
 //@Library("Jenkins_Library@2.147") _
 pipeline {
-   
-   node {
-	   label 'localhost'
+   agent{
+	   node {
+	   label 'master'
 	   	customWorkspace "F://Jenkins//${env.JOB_NAME}".replace('%2F', '_')
+	   
+   }
+   
    }
 			
 		
