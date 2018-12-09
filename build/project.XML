@@ -7,6 +7,7 @@
 		<Worksapce>F:\Jenkins\GK-MultiBanchProject\develop</Worksapce>
 		<output>F:\Jenkins\GK-MultiBanchProject\develop\build\dist\</output>
 		<BuildDir>F:\Jenkins\GK-MultiBanchProject\develop\build</BuildDir>
+		<ChocoDir>F:\Jenkins\GK-MultiBanchProject\develop\build\dist</ChocoDir>
 	</PropertyGroup>
 
 	
@@ -37,5 +38,19 @@
         <Exec WorkingDirectory="$(BuildDir)" Command="choco pack  ./pack/project.nuspec --version $(version) --outputdirectory ./dist" LogStandardErrorAsError="true"/>
         <Message Text="Publish Complete" />
     </Target>
+	<Target Name="Deployment">
+		 <Message Text="Running Deployment" />
+        <Exec WorkingDirectory="$(ChocoDir)" Command="cinst  project.$(version).nupkg" LogStandardErrorAsError="true"/>
+        <Message Text="Publish Complete" />
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</Target>
 	
 </Project>	

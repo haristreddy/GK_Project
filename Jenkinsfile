@@ -67,6 +67,13 @@ parameters{
 				}
 			}
 		}
+		stage('Delivery') {
+			steps {
+				dir("${env.WORKSPACE}\\build") {
+                    bat "\"C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe\" project.XML /t:Deployment /p:version=${env.ComponentVersion} "
+				}
+			}
+		}
 
 	} 
 	/* post {

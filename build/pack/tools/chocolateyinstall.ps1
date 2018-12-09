@@ -33,17 +33,32 @@ if ($packageParameters) {
    }   
 #folder copy
 try {
-    Copy-Item "${package}\source\bin\" "F:\Destination" -Recurse -Force
+    Copy-Item "${package}\source\bin\" "F:\Destination\bin" -Recurse -Force
     if(-not $?) {
         throw "Failure occured on bin Copy-Item:$_" 
         
     }
-    Copy-Item "${package}\source\config" "F:\Destination" -Recurse -Force
+    Copy-Item "${package}\source\config" "F:\Destination\config" -Recurse -Force
     if(-not $?) {
         throw "Failure occured on config Copy-Item:$_"         
     }
     
-	 Copy-Item "${package}\source" "F:\Destination" -Recurse -Force
+	 Copy-Item "${package}\source\AllReports.aspx" "F:\Destination" -Recurse -Force
+    if(-not $?) {
+        throw "Failure occured on files Copy-Item:$_" 
+        
+    }
+	Copy-Item "${package}\source\Defalut.aspx" "F:\Destination" -Recurse -Force
+    if(-not $?) {
+        throw "Failure occured on files Copy-Item:$_" 
+        
+    }
+	Copy-Item "${package}\source\Monitor.svc" "F:\Destination" -Recurse -Force
+    if(-not $?) {
+        throw "Failure occured on files Copy-Item:$_" 
+        
+    }
+	Copy-Item "${package}\source\Services.svc" "F:\Destination" -Recurse -Force
     if(-not $?) {
         throw "Failure occured on files Copy-Item:$_" 
         
