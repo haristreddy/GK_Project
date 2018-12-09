@@ -49,7 +49,9 @@ parameters{
 			steps {
 			  println "Starting build"
 				dir("${env.WORKSPACE}\\build") {
-					bat "\"${tool 'msbuild'}\"  project.XML"				
+					//bat "\"${tool 'msbuild'}\"  project.XML"
+					bat "C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"  project.XML"	
+								
 			}
 
 				/*dir("${env.WORKSPACE}") {
