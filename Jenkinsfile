@@ -33,10 +33,15 @@ parameters{
 	environment {
 		ComponentVersion = "${params.COMPONENTVERSION}.${env.BUILD_NUMBER}"	
 	}
+	options {
+		skipDefaultCheckout()
+		gitLabConnection('GitLab_Generic')
+		timeout(time: 60, unit: "SECONDS")
+	}
 
-  /*  triggers {
-        githubPush
-    } */
+  triggers {
+        gitlab(triggerOnPush: true)
+    } 
 
     stages {
 		stage('Checkout') {
