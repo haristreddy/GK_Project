@@ -6,6 +6,7 @@
 	<PropertyGroup>
 		<Worksapce>F:\Jenkins\GK-MultiBanchProject\develop</Worksapce>
 		<output>F:\Jenkins\GK-MultiBanchProject\develop\build\dist\</output>
+		<BuildDir>F:\Jenkins\GK-MultiBanchProject\develop\build</BuildDir>
 	</PropertyGroup>
 
 	
@@ -33,7 +34,7 @@
 		
 	<Target Name="Publish">
         <Message Text="Running Publish" />
-        <Exec WorkingDirectory="$(BuildDir)" Command="choco pack  ./pack/silverlight/silverlight.nuspec --version $(version) --outputdirectory ./dist" LogStandardErrorAsError="true"/>
+        <Exec WorkingDirectory="$(BuildDir)" Command="choco pack  ./pack/project.nuspec --version $(version) --outputdirectory ./dist" LogStandardErrorAsError="true"/>
         <Message Text="Publish Complete" />
     </Target>
 	

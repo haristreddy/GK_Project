@@ -60,13 +60,13 @@ parameters{
 				} */
 			}
 		} 
-	/*	stage('Package Full Build') {
+		stage('Package') {
 			steps {
 				dir("${env.WORKSPACE}\\build") {
-                    bat "\"${tool 'msbuild'}\"  %PROJECT_NAME%.XML /t:Publish /p:version=${env.ComponentVersion} "
+                    bat "\"C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe\" project.XML /t:Publish /p:version=${env.ComponentVersion} "
 				}
 			}
-		}*/
+		}
 
 	} 
 	/* post {
