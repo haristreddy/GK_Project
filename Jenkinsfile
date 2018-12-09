@@ -67,13 +67,13 @@ parameters{
 		}*/
 
 	} 
-	post {
-       /*always {
+	/* post {
+       always {
         /// clean up the file
             dir("${env.WORKSPACE}\\output") {
                 deleteDir()
             }
-        }  */  
+        }  
 		failure {
 			updateGitlabCommitStatus name: 'build', state: 'failed'
 			// Only send e-mail errors when it is the master branch
@@ -97,6 +97,6 @@ parameters{
 				
 			}
 		}
-  	}
+  	} */
 
 	}
