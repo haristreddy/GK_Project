@@ -40,7 +40,8 @@
     </Target>
 	<Target Name="Deployment">
 		 <Message Text="Running Deployment" />
-        <Exec WorkingDirectory="$(ChocoDir)" Command="cinst  project.$(version).nupkg" LogStandardErrorAsError="true"/>
+        <Exec WorkingDirectory="$(ChocoDir)" Command="choco feature enable -n allowglobalconfirmation" LogStandardErrorAsError="true"/>
+		<Exec WorkingDirectory="$(ChocoDir)" Command="cinst  project.$(version).nupkg" LogStandardErrorAsError="true"/>
         <Message Text="Publish Complete" />
 	
 	
