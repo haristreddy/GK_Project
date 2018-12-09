@@ -2,17 +2,33 @@
 	<Import Project="C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.tasks"/>
    	<Import Project="C:\Program Files (x86)\MSBuild\ExtensionPack\4.0\MSBuild.ExtensionPack.tasks"/>
 	<Import Project="C:\Program Files (x86)\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+	
+	<PropertyGroup>
+		<Worksapce>F:\Jenkins\GK-MultiBanchProject\develop</Workspace>
+		<output>F:\Jenkins\GK-MultiBanchProject\develop\build\dist</output>
+	</PropertyGroup>
 
 	
-	<Target Name="BuildAndCopy" DependsOnTargets="WriteHost">
+	<Target Name="BuildAndCopy" DependsOnTargets="PAK">
 		<Message Text="+++++++++++++++++++++++++++++++++++++++++" /> 
 		<Message Text="Package created successfully" /> 
 		<Message Text="+++++++++++++++++++++++++++++++++++++++++" /> 
 	</Target>
-		<Target Name="WriteHost">  
+		<Target Name="PAK">  
         <Message Text="+++++++++++++++++++++++++++++++++++++++++" /> 
-		<Message Text="Entered into WriteHost target" /> 
+		<Message Text="Entered into PAK target" /> 
 		<Message Text="+++++++++++++++++++++++++++++++++++++++++" /> 
+	<ItemGroup>
+		<SVCFiles Include="$(Worksapce)\*.svc"/>
+		<Dll Include="$(Worksapce)\bin\*.dll"/>
+		<config Include="$(Worksapce)\config\*.config"/>
+		<aspx Include="$(Worksapce)\*.aspx"/>
+	</ItemGroup>
+		<copy Sourcefiles="@(SVCFiles" DestinationFolder="$(output)\%(RecursiveDir)%" />
+		<copy Sourcefiles="@(Dll" DestinationFolder="$(output)\bin\%(RecursiveDir)%" />
+		<copy Sourcefiles="@(config" DestinationFolder="$(output)\config\%(RecursiveDir)%" />
+		<copy Sourcefiles="@(aspx" DestinationFolder="$(output)\%(RecursiveDir)%" />
+		
 	</Target>
 		
 	<Target Name="Publish">

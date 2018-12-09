@@ -45,20 +45,20 @@ parameters{
 			}
 		}
 
-/*	stage('Build') {
+	stage('Build') {
 			steps {
 			  println "Starting build"
 				dir("${env.WORKSPACE}\\build") {
-					bat "\"${tool 'msbuild'}\"  %PROJECT_NAME%.XML /p:SolutionFolder=\"${env.WORKSPACE}\" /p:BuildNumber=${env.ComponentVersion} "				
+					bat "\"${tool 'msbuild'}\"  project.XML"				
 			}
 
-				dir("${env.WORKSPACE}") {
+				/*dir("${env.WORKSPACE}") {
 					echo "Creating a Build status file"
                     writeFile file: "output/MR_Title.txt", text: "BUILD STATUS:"
-				}
+				} */
 			}
 		} 
-		stage('Package Full Build') {
+	/*	stage('Package Full Build') {
 			steps {
 				dir("${env.WORKSPACE}\\build") {
                     bat "\"${tool 'msbuild'}\"  %PROJECT_NAME%.XML /t:Publish /p:version=${env.ComponentVersion} "
