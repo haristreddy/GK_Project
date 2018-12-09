@@ -24,10 +24,10 @@
 		<config Include="$(Worksapce)\config\*.config"/>
 		<aspx Include="$(Worksapce)\*.aspx"/>
 	</ItemGroup>
-		<copy Sourcefiles="@(SVCFiles" DestinationFolder="$(output)" />
-		<copy Sourcefiles="@(Dll" DestinationFolder="$(output)bin\" />
-		<copy Sourcefiles="@(config" DestinationFolder="$(output)config\" />
-		<copy Sourcefiles="@(aspx" DestinationFolder="$(output)" />
+		<copy Sourcefiles="@(SVCFiles)" DestinationFolder="$(output)" />
+		<copy Sourcefiles="@(Dll)" DestinationFolder="$(output)bin\" />
+		<copy Sourcefiles="@(config)" DestinationFolder="$(output)config\" />
+		<copy Sourcefiles="@(aspx)" DestinationFolder="$(output)" />
 		
 	</Target>
 		
