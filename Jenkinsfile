@@ -50,7 +50,7 @@ parameters{
 			  println "Starting build"
 				dir("${env.WORKSPACE}\\build") {
 					//bat "\"${tool 'msbuild'}\"  project.XML"
-					bat "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe" project.XML
+					bat "\"C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe\" project.XML"
 								
 			}
 
