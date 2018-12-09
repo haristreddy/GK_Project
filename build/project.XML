@@ -4,7 +4,7 @@
 	<Import Project="C:\Program Files (x86)\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
 	
 	<PropertyGroup>
-		<Worksapce>F:\Jenkins\GK-MultiBanchProject\develop</Workspace>
+		<Worksapce>F:\Jenkins\GK-MultiBanchProject\develop</Worksapce>
 		<output>F:\Jenkins\GK-MultiBanchProject\develop\build\dist</output>
 	</PropertyGroup>
 
