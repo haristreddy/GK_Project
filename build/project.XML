@@ -5,7 +5,7 @@
 	
 	<PropertyGroup>
 		<Worksapce>F:\Jenkins\GK-MultiBanchProject\develop</Worksapce>
-		<output>F:\Jenkins\GK-MultiBanchProject\develop\build\dist</output>
+		<output>F:\Jenkins\GK-MultiBanchProject\develop\build\dist\</output>
 	</PropertyGroup>
 
 	
@@ -24,10 +24,10 @@
 		<config Include="$(Worksapce)\config\*.config"/>
 		<aspx Include="$(Worksapce)\*.aspx"/>
 	</ItemGroup>
-		<copy Sourcefiles="@(SVCFiles" DestinationFolder="$(output)\%(RecursiveDir)%" />
-		<copy Sourcefiles="@(Dll" DestinationFolder="$(output)\bin\%(RecursiveDir)%" />
-		<copy Sourcefiles="@(config" DestinationFolder="$(output)\config\%(RecursiveDir)%" />
-		<copy Sourcefiles="@(aspx" DestinationFolder="$(output)\%(RecursiveDir)%" />
+		<copy Sourcefiles="@(SVCFiles" DestinationFolder="$(output)" />
+		<copy Sourcefiles="@(Dll" DestinationFolder="$(output)bin\" />
+		<copy Sourcefiles="@(config" DestinationFolder="$(output)config\" />
+		<copy Sourcefiles="@(aspx" DestinationFolder="$(output)" />
 		
 	</Target>
 		
